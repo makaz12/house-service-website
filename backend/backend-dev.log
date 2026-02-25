@@ -1,0 +1,17 @@
+
+> backend@1.0.0 dev
+> nodemon src/server.js
+
+[33m[nodemon] 3.1.13[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[dotenv@17.3.1] injecting env (9) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+API listening on http://localhost:4000
+[0mGET /api/feedback?limit=3 [36m304[0m 3.806 ms - -[0m
+[0mGET /api/services [36m304[0m 10.364 ms - -[0m
+[0mGET /api/feedback?limit=3 [36m304[0m 1.265 ms - -[0m
+[0mGET /api/services [36m304[0m 1.516 ms - -[0m
+[0mGET /api/services [36m304[0m 1.368 ms - -[0m
+[0mGET /api/services [36m304[0m 1.453 ms - -[0m
