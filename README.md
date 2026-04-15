@@ -45,6 +45,34 @@ API base URL: `http://localhost:4000/api`
 
 Frontend URL: `http://localhost:5173`
 
+## GitHub Pages deployment
+
+GitHub Pages only hosts the frontend. The backend must stay deployed somewhere else and the frontend must call that hosted API through `VITE_API_URL`.
+
+### What is already configured
+
+- The frontend now uses `HashRouter`, which avoids refresh 404 issues on GitHub Pages.
+- Vite is configured with the GitHub Pages base path `/house-service-website/`.
+- A workflow at `.github/workflows/deploy-pages.yml` builds `frontend` and deploys it to GitHub Pages from `main`.
+
+### GitHub setup steps
+
+1. Push this repository to GitHub.
+2. Open the repository on GitHub.
+3. Go to `Settings` -> `Pages`.
+4. Under `Build and deployment`, choose `GitHub Actions` as the source.
+5. Go to `Settings` -> `Secrets and variables` -> `Actions` -> `Variables`.
+6. Add these repository variables:
+   - `VITE_API_URL` = your deployed backend URL, for example `https://your-backend-host/api`
+   - `VITE_GOOGLE_MAPS_API_KEY` = your Google Maps browser key
+7. Push to `main` again or run the `Deploy frontend to GitHub Pages` workflow manually from the `Actions` tab.
+8. After the workflow finishes, your site will be published at:
+   - `https://makaz12.github.io/house-service-website/`
+
+### Important note
+
+If the backend is still only running on localhost, the deployed GitHub Pages site will load but login, booking, and any live API feature will fail until `VITE_API_URL` points to a real deployed backend.
+
 ## Main API endpoints
 
 - `POST /api/auth/register`
